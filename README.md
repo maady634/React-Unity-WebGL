@@ -23,6 +23,16 @@ This project demonstrates real-time customization, full-stack communication, and
 
 ---
 
+## Credits
+
+3D model assets used in this project are created by:
+
+Splash 3D - https://www.cgtrader.com/designers/splash-3d
+
+These assets are used in accordance with their respective licenses. Assets are used for demonstration and educational purposes.
+
+---
+
 ## Development Timeline (Build Order)
 
 ### Day 1 — Unity: 3D Model + Material System
