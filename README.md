@@ -1,40 +1,45 @@
 # React-Unity-WebGL
 
-# 👟 3D Shoe Configurator (Unity + React + .NET)
+<img width="1919" height="1079" alt="Screenshot 2026-04-09 091509" src="https://github.com/user-attachments/assets/0fb2d2f1-95e4-47a8-a5c0-ff95f62cacb8" />
+## Live Demo
 
-An end-to-end **interactive 3D product configurator** built in **4–5 days**, combining **Unity WebGL**, **React (TypeScript)**, and a **.NET 8 backend**.
+https://sneaker-configurator-tau.vercel.app/
 
-This project demonstrates real-time customization, full-stack communication, and production-ready architecture.
+# 3D Shoe Configurator (Unity + React + .NET)
 
----
+An end-to-end interactive 3D product configurator built in 4–5 days using Unity WebGL, React (TypeScript), and a .NET 8 backend.
 
-## 🧩 Tech Stack
-
-* 🎮 Unity 2022 LTS + C#
-* 🌐 React 18 + TypeScript
-* 🔗 React-Unity-WebGL 9.x
-* 🧠 .NET 8 Web API
-* 💾 EF Core + SQLite
+This project demonstrates real-time customization, full-stack communication, and a scalable architecture.
 
 ---
 
-## ⚡ Development Timeline (Build Order)
+## Tech Stack
 
-### 🟣 Day 1 — Unity: 3D Model + Material System
+* Unity 2022 LTS + C#
+* React 18 + TypeScript
+* React-Unity-WebGL 9.x
+* .NET 8 Web API
+* Entity Framework Core + SQLite
 
-* Imported and structured shoe model into modular parts:
+---
+
+## Development Timeline (Build Order)
+
+### Day 1 — Unity: 3D Model + Material System
+
+* Structured the shoe into modular parts:
 
   * Sole
   * Upper
   * Laces
-* Implemented **per-part color control**
-* Used **MaterialPropertyBlock** for performance-friendly updates
-* Added **finish system**:
+* Implemented per-part color customization
+* Used MaterialPropertyBlock for efficient rendering updates
+* Added finish options:
 
   * Matte (low smoothness)
   * Glossy (high smoothness)
 
-**Key Concepts**
+Key Concepts:
 
 * `_BaseColor`
 * `_Smoothness`
@@ -42,43 +47,39 @@ This project demonstrates real-time customization, full-stack communication, and
 
 ---
 
-### 🟢 Day 2 — Bridge: React ↔ Unity Communication
+### Day 2 — Bridge: React ↔ Unity Communication
 
-* Integrated Unity WebGL build with React using:
-
-  * `react-unity-webgl`
-* Implemented messaging system:
+* Integrated Unity WebGL with React using react-unity-webgl
+* Implemented bidirectional communication:
 
   * React → Unity (SendMessage)
   * Unity → React (callbacks/events)
 
-**Result**
+Result:
 
-* UI actions directly control 3D model in real-time
+* UI controls update the 3D model in real-time
 
 ---
 
-### 🔵 Day 3 — React UI: Configurator Panel
+### Day 3 — React UI: Configurator Panel
 
-* Built interactive configurator UI:
+* Built a configurable UI:
 
   * Color pickers
   * Material selectors
   * Variant toggles
-* State managed using:
+* Managed state using useReducer
 
-  * `useReducer` (predictable state flow)
+Features:
 
-**Features**
-
-* Real-time updates synced with Unity
-* Clean UX for part-based customization
+* Real-time synchronization with Unity
+* Clean and modular UI structure
 
 ---
 
-### 🟠 Day 4 — Backend: Save & Load Configurations
+### Day 4 — Backend: Save & Load Configurations
 
-* Built REST API using **.NET 8**
+* Developed REST API using .NET 8
 * Features:
 
   * Save configuration
@@ -87,34 +88,35 @@ This project demonstrates real-time customization, full-stack communication, and
 
   * SQLite with EF Core
 
-**Flow**
+API Endpoints:
 
-```id="b5rj7y"
-POST /configurations → Save config
-GET /configurations/{id} → Load config
+```
+POST /configurations
+GET /configurations/{id}
 ```
 
 ---
 
-### 🔴 Day 5 — Polish, Optimization & Deployment
+### Day 5 — Polish, Optimization & Deployment
 
-* ✨ Smooth transitions (color lerp ~0.3s)
-* 🎥 Camera auto-rotation when idle
-* ⏳ WebGL loading progress bar in React
-* 🚀 Deployment:
+* Smooth transitions (color interpolation ~0.3s)
+* Camera auto-rotation when idle
+* WebGL loading progress integration in React
 
-  * Frontend + Unity → Vercel
-  * Backend → Railway
+Deployment:
+
+* Frontend + Unity WebGL → Vercel
+* Backend → Railway
 
 ---
 
-## 🎯 Core Features
+## Core Features
 
-### 🎨 Part-Based Customization
+### Part-Based Customization
 
-* Independent control over each shoe component
+* Independent control of each shoe component
 
-### 🧵 Material System
+### Material System
 
 * Swap full materials:
 
@@ -123,27 +125,32 @@ GET /configurations/{id} → Load config
   * Rubber
   * Carbon Fibre
 
-### 🧱 Variant Switching
+### Variant Switching
 
 * Toggle between mesh variants:
 
   * High-top / Low-top
-  * Sole types
+  * Sole variations
 
-### 💾 Save & Share
+### Live Pricing System
 
-* Persist configurations to backend
+* Dynamic pricing based on selected options
+* Real-time configuration summary
+
+### Save & Load
+
+* Persist configurations via backend
 * Generate shareable IDs
-* Reload configurations seamlessly
+* Restore configurations seamlessly
 
 ---
 
-## 🏗️ System Architecture
+## Architecture
 
-```id="y08l9j"
+```
 React UI (TypeScript)
         ↓
-Unity WebGL (C# Runtime)
+Unity WebGL (C#)
         ↓
 .NET 8 API
         ↓
@@ -152,11 +159,11 @@ SQLite Database
 
 ---
 
-## ⚙️ Setup Instructions
+## Setup Instructions
 
 ### 1. Clone Repository
 
-```bash id="rklqaz"
+```bash
 git clone https://github.com/your-username/shoe-configurator.git
 cd shoe-configurator
 ```
@@ -165,15 +172,15 @@ cd shoe-configurator
 
 ### 2. Unity (WebGL Build)
 
-* Open project in **Unity 2022 LTS**
-* Build target: **WebGL**
-* Copy build into React public directory
+* Open in Unity 2022 LTS
+* Switch platform to WebGL
+* Build and place output in React public folder
 
 ---
 
 ### 3. Frontend (React)
 
-```bash id="4e4y8p"
+```bash
 cd frontend
 npm install
 npm run dev
@@ -183,7 +190,7 @@ npm run dev
 
 ### 4. Backend (.NET 8)
 
-```bash id="w8fw8v"
+```bash
 cd backend
 dotnet restore
 dotnet run
@@ -191,32 +198,38 @@ dotnet run
 
 ---
 
-## 📸 Preview
+## Preview
 
+Add screenshots or GIFs here to demonstrate:
+
+* Color customization
+* Material switching
+* Variant toggling
+* UI interaction
 
 ---
 
-## 🔥 Highlights
+## Highlights
 
-* Built in **under 5 days**
+* Built within 4–5 days
 * Full-stack integration (Unity + Web + Backend)
-* Optimized rendering using **MaterialPropertyBlock**
-* Scalable and modular configurator architecture
-* Production-ready deployment
+* Efficient rendering using MaterialPropertyBlock
+* Modular and scalable configurator design
+* Ready for deployment
 
 ---
 
-## 🚀 Future Improvements
+## Future Improvements
 
-* 🛒 Add checkout system
-* 📱 Mobile responsiveness
-* 🎯 Preset themes (brand-style configs)
-* 🌐 Multi-product configurator
-* 🤖 AI-based recommendations
+* Add cart and checkout system
+* Mobile optimization
+* Preset themes
+* Multi-product configurator support
+* AI-based recommendations
 
 ---
 
-## 👨‍💻 Author
+## Author
 
-**Manoj Pranav - Unity Developer**
-Creating immersive and scalable interactive systems with Unity & full-stack tech.
+Manoj Pranav, Unity Developer
+Focused on building interactive and scalable systems with Unity and modern web technologies.
